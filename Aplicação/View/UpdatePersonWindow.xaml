@@ -1,0 +1,47 @@
+﻿<Window x:Class="Aplicação.View.UpdatePersonWindow"
+        x:Name="CreatePersonW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:Aplicação.ViewModel"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aplicação.View"
+        mc:Ignorable="d"
+        Title="Atualizar registro"
+        Height="260"
+        Width="450">
+    <Window.DataContext>
+        <vm:UpdatePersonVM />
+    </Window.DataContext>
+    <Grid Margin="16 8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Content="Nome"
+               Grid.Row="0" />
+        <TextBox Grid.Row="1"
+                 Text="{Binding Name}" />
+        <Label Content="Sobrenome"
+               Margin="0 16 0 0"
+               Grid.Row="2" />
+        <TextBox Grid.Row="3"
+                 Text="{Binding Surname}" />
+        <Label Content="Telefone"
+               Margin="0 16 0 0"
+               Grid.Row="4" />
+        <TextBox Grid.Row="5"
+                 Text="{Binding Phone}" />
+
+        <Button Content="Salvar"
+                Command="{Binding UpdatePersonCommand}"
+                CommandParameter="{Binding ElementName=CreatePersonW}"
+                VerticalAlignment="Bottom"
+                Grid.Row="6" />
+    </Grid>
+</Window>

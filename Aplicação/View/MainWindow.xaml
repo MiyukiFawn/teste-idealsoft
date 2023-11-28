@@ -1,0 +1,49 @@
+﻿<Window x:Class="Aplicação.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:vm="clr-namespace:Aplicação.ViewModel"
+        xmlns:model="clr-namespace:Aplicação.Model"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aplicação.View"
+        mc:Ignorable="d"
+        Title="Home"
+        Height="768"
+        Width="1024">
+    <Window.DataContext>
+        <vm:MainWindowVM />
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+        <DataGrid Margin="16 8"
+                  SelectedItem="{Binding SelectedPerson}"
+                  ItemsSource="{Binding Peoples}"
+                  IsReadOnly="True"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"
+                                    Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Nome"
+                                    Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Sobrenome"
+                                    Binding="{Binding Surname}" />
+                <DataGridTextColumn Header="Telefone"
+                                    Binding="{Binding Phone}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <ListView Grid.Column="1"
+                  HorizontalContentAlignment="Stretch"
+                  Margin="16 8">
+            <Button Content="Criar"
+                    Command="{Binding CreatePersonCommand}" />
+            <Button Content="Editar"
+                    Command="{Binding EditPersonCommand}" />
+            <Button Content="Excluír"
+                    Command="{Binding DeletePersonCommand}"
+                    Width="120" />
+        </ListView>
+    </Grid>
+</Window>

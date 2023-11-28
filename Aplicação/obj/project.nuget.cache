@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "PAWZiz00loI/Ox7sOVt877plRt7MO09fiixmwstKgzHoZ47xP3FfecqJwuZjsHk/leWmRmDu0tWOMQsUXZ1Z9w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\geywy\\source\\repos\\Teste Idealsoft\\Aplicação\\Aplicação.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\geywy\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",
+    "C:\\Users\\geywy\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
